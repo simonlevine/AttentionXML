@@ -193,3 +193,4 @@ venv.bak/
 .idea/
 .DS_Store
 data/EUR-Lex.tar
+*.txt

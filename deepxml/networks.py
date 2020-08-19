@@ -8,8 +8,10 @@ Created on 2018/12/9
 
 import torch.nn as nn
 
-from deepxml.modules import *
+from deepxml.modules import *  # NOTE - to be changed. (Embedding, LSTMencoder, etc. ...)
 
+
+#NOTE - to be changed. AttentionRNN should become Attention Transformer.
 
 __all__ = ['AttentionRNN', 'FastAttentionRNN']
 
@@ -27,12 +29,14 @@ class Network(nn.Module):
         raise NotImplementedError
 
 
-class AttentionRNN(Network):
+class AttentionRNN(Network):  # NOTE - to be changed.
+
     """
 
     """
     def __init__(self, labels_num, emb_size, hidden_size, layers_num, linear_size, dropout, **kwargs):
         super(AttentionRNN, self).__init__(emb_size, **kwargs)
+        # NOTE - to be changed.
         self.lstm = LSTMEncoder(emb_size, hidden_size, layers_num, dropout)
         self.attention = MLAttention(labels_num, hidden_size * 2)
         self.linear = MLLinear([hidden_size * 2] + linear_size, 1)
@@ -44,12 +48,14 @@ class AttentionRNN(Network):
         return self.linear(attn_out)
 
 
-class FastAttentionRNN(Network):
+class FastAttentionRNN(Network):  # NOTE - to be changed.
+
     """
 
     """
     def __init__(self, labels_num, emb_size, hidden_size, layers_num, linear_size, dropout, parallel_attn, **kwargs):
         super(FastAttentionRNN, self).__init__(emb_size, **kwargs)
+        # NOTE - to be changed.
         self.lstm = LSTMEncoder(emb_size, hidden_size, layers_num, dropout)
         self.attention = FastMLAttention(labels_num, hidden_size * 2, parallel_attn)
         self.linear = MLLinear([hidden_size * 2] + linear_size, 1)

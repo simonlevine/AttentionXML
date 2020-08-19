@@ -13,6 +13,7 @@ import torch.nn.functional as F
 
 
 __all__ = ['Embedding', 'LSTMEncoder', 'MLAttention', 'AttentionWeights', 'FastMLAttention', 'MLLinear']
+#NOTE - to be changed.
 
 
 class Embedding(nn.Module):
@@ -39,7 +40,7 @@ class Embedding(nn.Module):
         return emb_out[:, :lengths.max()], lengths, masks[:, :lengths.max()]
 
 
-class LSTMEncoder(nn.Module):
+class LSTMEncoder(nn.Module):  # NOTE - to be changed.
     """
 
     """

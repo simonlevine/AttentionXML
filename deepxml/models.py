@@ -181,4 +181,4 @@ class XMLModel(Model):
         torch.save(self.model.state_dict(), self.model_path)
 
     def load_model(self):
-        self.model.load_state_dict(torch.load(self.model_path))
+        self.model.load_state_dict(torch.load(self.model_path)) 
