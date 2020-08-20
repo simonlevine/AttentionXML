@@ -37,6 +37,7 @@ class AttentionRNN(Network):  # NOTE - to be changed.
     def __init__(self, labels_num, emb_size, hidden_size, layers_num, linear_size, dropout, **kwargs):
         super(AttentionRNN, self).__init__(emb_size, **kwargs)
         # NOTE - to be changed.
+        # NOTE - to be changed.
         self.lstm = LSTMEncoder(emb_size, hidden_size, layers_num, dropout)
         self.attention = MLAttention(labels_num, hidden_size * 2)
         self.linear = MLLinear([hidden_size * 2] + linear_size, 1)
