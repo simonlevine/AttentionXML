@@ -35,7 +35,7 @@ def tokenize(sentence: str, sep='/SEP/'):
 @click.option('--max-len', type=click.INT, default=500, help='Truncated length.')
 def main(text_path, tokenized_path, label_path, vocab_path, emb_path, w2v_model, vocab_size, max_len):
     if tokenized_path is not None:
-        logger.info(F'Tokenizing Text. {text_path}')
+        logger.info(F'Tokenizing Text. {text_path}') #NOTE: To be changed to Transformer tokenizer.
         with open(text_path) as fp, open(tokenized_path, 'w') as fout:
             for line in tqdm(fp, desc='Tokenizing'):
                 print(*tokenize(line), file=fout)

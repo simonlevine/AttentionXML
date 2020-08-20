@@ -17,7 +17,7 @@ from logzero import logger
 from typing import Optional, Mapping, Tuple
 
 from deepxml.evaluation import get_p_5, get_n_5
-from deepxml.modules import *
+from deepxml.modules import * #attn, embedding, encoder,...
 from deepxml.optimizers import *
 
 

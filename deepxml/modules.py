@@ -12,7 +12,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-__all__ = ['Embedding', 'LSTMEncoder', 'MLAttention', 'AttentionWeights', 'FastMLAttention', 'MLLinear']
+__all__ = ['Embedding', 'TransformerEncoder', 'MLAttention', 'AttentionWeights', 'FastMLAttention', 'MLLinear']
 #NOTE - to be changed.
 
 
@@ -59,6 +59,9 @@ class LSTMEncoder(nn.Module):  # NOTE - to be changed.
         outputs, _ = nn.utils.rnn.pad_packed_sequence(
             self.lstm(packed_inputs, (hidden_init, cell_init))[0], batch_first=True)
         return self.dropout(outputs[torch.argsort(idx)])
+
+
+# class TransformerEncoder(nn.Module):
 
 
 class MLAttention(nn.Module):
