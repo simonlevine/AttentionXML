@@ -12,7 +12,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-__all__ = ['Embedding', 'TransformerEncoder', 'MLAttention', 'AttentionWeights', 'FastMLAttention', 'MLLinear']
+__all__ = ['Embedding', 'LSTMEncoder', 'MLAttention', 'AttentionWeights', 'FastMLAttention', 'MLLinear']
 #NOTE - to be changed.
 
 
